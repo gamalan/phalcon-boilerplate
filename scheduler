@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php
+include __DIR__ . '/bootstrap/autoloader.php';
+
+use GO\Scheduler;
+use Phalcon\Logger\Adapter\File as FileAdapter;
+
+// Create a new scheduler
+$scheduler = new Scheduler();
+
+// custom log
+$logger = new FileAdapter( BASE_DIR . "storage/logs/scheduler.log" );
+
+$scheduler->php( BASE_DIR . 'application', null, [ 'cache' => 'clear' ] )
+          ->at( '0 0 * * 0' )
+          ->then( function ( $output ) use ( $logger ) {
+	          $logger->info( 'clear_app_cache ' . $output );
+	          $logger->info( 'clear_app_cache executed at ' . date( 'Y-m-d H:i:s' ) );
+          }, true );
+
+
+$scheduler->run();

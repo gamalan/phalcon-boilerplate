@@ -1,0 +1,49 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Phalcon template
+/storage/cache/data/*
+/storage/cache/models/*
+/storage/cache/views/*
+/storage/cache/volt/*
+/storage/cache/metaData/*
+!/storage/cache/data/.gitignore
+!/storage/cache/models/.gitignore
+!/storage/cache/views/.gitignore
+!/storage/cache/volt/.gitignore
+!/storage/cache/metaData/.gitignore
+/storage/logs/*
+!/storage/logs/.gitignore
+/storage/pids/*
+!/storage/pids/.gitignore
+/public/.htaccess
+/public/temp/
+/public/builder/upload/*
+!/public/temp/index.html
+/halaman_public/.htaccess
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+/vendor/
+/bin/*
+composer.lock
+tests/_output/*
+.env
+phinx.yml
+/phinx.yml
+.phalcon/
+.vscode/
+tests/_envs/
+scripts/test.php
+supervisor_log/*
+!supervisor_log/index.html
+
+## hidden
+#node_modules/
+.ignore
+
+## seed
+#db/seeds/

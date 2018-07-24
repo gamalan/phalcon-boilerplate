@@ -1,0 +1,84 @@
+{
+  "name": "gamalan/phalcon-boilerplate",
+  "description": "Phalcon Boilerplate",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Gamal Abdul Nasser",
+      "email": "gamalanpro@gmail.com"
+    }
+  ],
+  "repositories": {
+    "packagist.org": {
+      "type": "composer",
+      "url": "https://packagist.org"
+    }
+  },
+  "require": {
+    "php": ">= 5.5",
+    "ext-curl": "*",
+    "ext-mbstring": "*",
+    "ext-iconv": "*",
+    "ext-json": "*",
+    "ext-phalcon": "^3.0.0",
+    "ext-yaml": "*",
+    "guzzlehttp/guzzle": ">=4.1.4 <7.0",
+    "swiftmailer/swiftmailer": "^5.4",
+    "phalcongelist/php-diff": "~2.0",
+    "phalcon/incubator": "~3.0.0",
+    "nesbot/Carbon": "*",
+    "kirimemail/phalcon-datatables": "^1.0",
+    "vlucas/phpdotenv": "2.*",
+    "monolog/monolog": "1.*",
+    "ramsey/uuid": "3.*",
+    "alphayax/get_opt": "3.0.0",
+    "verdant/xml2array": "dev-master",
+    "sentry/sentry": "dev-master",
+    "voku/anti-xss": "dev-master",
+    "ezyang/htmlpurifier": "dev-master",
+    "peppeocchi/php-cron-scheduler": "^2.3",
+    "filp/whoops": "^2.1",
+    "league/flysystem-aws-s3-v3": "dev-master",
+    "psy/psysh": "dev-master"
+  },
+  "require-dev": {
+    "fzaninotto/faker": "dev-master",
+    "robmorgan/phinx": "dev-master",
+    "league/factory-muffin": "3.0.*@dev",
+    "phpdocumentor/reflection-docblock": "^2.0.4",
+    "phpunit/phpunit": "4.8.*",
+    "codeception/codeception": "~2.2",
+    "codeception/verify": "~0.3",
+    "codeception/specify": "~0.4",
+    "codeception/mockery-module": "^0.2",
+    "squizlabs/php_codesniffer": "~2.6",
+    "phalcon/devtools": "~3.0.0",
+    "filp/whoops": "^2.1",
+    "whoops/phalcon": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Application\\": "app/library",
+      "Application\\Models\\": "app/models",
+      "Application\\Controllers\\": "app/controllers",
+      "Application\\Task\\": "app/task",
+      "Application\\Provider\\": "app/provider",
+      "Application\\Listener\\": "app/listener"
+    },
+    "files": [
+      "bootstrap/helpers.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Application\\Tests\\": "tests"
+    }
+  },
+  "minimum-stability": "dev",
+  "config": {
+    "bin-dir": "bin",
+    "process-timeout": 6000,
+    "discard-changes": true
+  }
+}

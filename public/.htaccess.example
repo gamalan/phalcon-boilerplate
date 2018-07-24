@@ -1,0 +1,21 @@
+AddDefaultCharset UTF-8
+
+<IfModule mod_rewrite.c>
+    # force HTTPS
+    #RewriteCond %{HTTPS} !=on
+    #RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
+
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^((?s).*)$ index.php?_url=/$1 [QSA,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2|font.css|css|js)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+  Header set Content-Security-Policy "default-src 'self' *.kirim.email; connect-src 'self' *.facebook.com *.fbcdn.net *.facebook.net *.hotjar.com *.kirim.email; font-src 'self' *.gstatic.com fonts.googleapis.com *.kirim.email ; img-src *; media-src *; object-src 'self' *.hotjar.com *.cloudflare.com *.facebook.com *.fbcdn.net *.facebook.net *.kirim.email; script-src 'self' *.hotjar.com *.cloudflare.com *.facebook.com *.fbcdn.net *.facebook.net *.kirim.email *.ravenjs.com *.dropbox.com *.cdnjs.com *.jsdelivr.com oss.maxcdn.com ajax.googleapis.com maxcdn.bootstrapcdn.com code.jquery.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' *.cloudflare.com *.kirim.email fonts.googleapis.com 'unsafe-inline'; frame-src 'self' *.facebook.com *.fbcdn.net *.facebook.net *.kirim.email *.hotjar.com *.ravenjs.com"
+        Header set X-Content-Type-Options nosniff
+        Header set X-XSS-Protection "1; mode=block"
+</IfModule>
