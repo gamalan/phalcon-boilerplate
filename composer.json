@@ -64,7 +64,8 @@
       "Application\\Controllers\\": "app/controllers",
       "Application\\Task\\": "app/task",
       "Application\\Provider\\": "app/provider",
-      "Application\\Listener\\": "app/listener"
+      "Application\\Listener\\": "app/listener",
+      "Application\\Router\\": "app/router"
     },
     "files": [
       "bootstrap/helpers.php"
